@@ -12,6 +12,15 @@ export function DesignSampler() {
         <h1 className="text-lg font-semibold">Design Sampler</h1>
       </nav>
 
+      {/* Page Links */}
+      <div className="max-w-3xl mx-auto px-6 pt-6">
+        <div className="flex gap-3">
+          <Link href="/design/dashboard" className="text-sm text-primary underline hover:opacity-70">
+            Dashboard
+          </Link>
+        </div>
+      </div>
+
       <div className="max-w-3xl mx-auto px-6 py-10 space-y-16">
         {/* Typography */}
         <section>
