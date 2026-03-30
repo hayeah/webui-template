@@ -16,9 +16,9 @@ cd ~/github.com/hayeah/webui-template
 pnpm install
 vp dev --port 5173
 
-# Option B: scaffold via Vite+ (degits the repo, installs deps automatically)
-vp create github:hayeah/webui-template
-cd webui-template
+# Option B: scaffold via Vite+ (pass project name after --)
+vp create github:hayeah/webui-template -- myapp
+cd myapp
 vp dev --port 5173
 ```
 
