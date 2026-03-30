@@ -16,7 +16,7 @@ cd ~/github.com/hayeah/webui-template
 
 # Install and run
 pnpm install
-pnpm dev --port 5173
+vp dev --port 5173
 ```
 
 Visit `/design` to see the design sampler — typography, semantic colors, buttons, cards, inputs, lists, and a blog post section. Visit `/design/dashboard` for a dashboard with stat cards, chart, and activity list.
@@ -35,7 +35,7 @@ browser screenshot --open http://localhost:5173/design \
 
 ## Stack
 
-- **Vite** + **React 19** + **TypeScript**
+- **Vite+** (vite-plus) + **React 19** + **TypeScript**
 - **Tailwind CSS v4** + `tailwindcss-animate`
 - **MobX** + `mobx-react-lite` — state management
 - **wouter** — lightweight routing
@@ -65,21 +65,21 @@ All colors are defined as OKLCh CSS variables in `src/index.css`, with `:root` (
 
 ### Semantic Color Tokens
 
-| Token | Tailwind class | Use for |
-|---|---|---|
-| `--background` / `--foreground` | `bg-background text-foreground` | Page surface and body text |
-| `--primary` / `--primary-foreground` | `bg-primary text-primary-foreground` | Primary buttons, key actions |
-| `--secondary` / `--secondary-foreground` | `bg-secondary text-secondary-foreground` | Secondary buttons, less prominent |
-| `--muted` / `--muted-foreground` | `bg-muted text-muted-foreground` | Subdued backgrounds, captions |
-| `--accent` / `--accent-foreground` | `bg-accent text-accent-foreground` | Hover states, highlights |
+| Token                                        | Tailwind class                               | Use for                                 |
+| -------------------------------------------- | -------------------------------------------- | --------------------------------------- |
+| `--background` / `--foreground`              | `bg-background text-foreground`              | Page surface and body text              |
+| `--primary` / `--primary-foreground`         | `bg-primary text-primary-foreground`         | Primary buttons, key actions            |
+| `--secondary` / `--secondary-foreground`     | `bg-secondary text-secondary-foreground`     | Secondary buttons, less prominent       |
+| `--muted` / `--muted-foreground`             | `bg-muted text-muted-foreground`             | Subdued backgrounds, captions           |
+| `--accent` / `--accent-foreground`           | `bg-accent text-accent-foreground`           | Hover states, highlights                |
 | `--destructive` / `--destructive-foreground` | `bg-destructive text-destructive-foreground` | Errors, delete actions, negative trends |
-| `--success` / `--success-foreground` | `bg-success text-success-foreground` | Positive signals, upward trends |
-| `--warning` / `--warning-foreground` | `bg-warning text-warning-foreground` | Caution, amber alerts |
-| `--card` / `--card-foreground` | `bg-card text-card-foreground` | Card surfaces |
-| `--popover` / `--popover-foreground` | `bg-popover text-popover-foreground` | Popover/dropdown surfaces |
-| `--border` | `border-border` | Borders, dividers |
-| `--input` | `border-input` | Input field borders |
-| `--ring` | `ring-ring` | Focus rings |
+| `--success` / `--success-foreground`         | `bg-success text-success-foreground`         | Positive signals, upward trends         |
+| `--warning` / `--warning-foreground`         | `bg-warning text-warning-foreground`         | Caution, amber alerts                   |
+| `--card` / `--card-foreground`               | `bg-card text-card-foreground`               | Card surfaces                           |
+| `--popover` / `--popover-foreground`         | `bg-popover text-popover-foreground`         | Popover/dropdown surfaces               |
+| `--border`                                   | `border-border`                              | Borders, dividers                       |
+| `--input`                                    | `border-input`                               | Input field borders                     |
+| `--ring`                                     | `ring-ring`                                  | Focus rings                             |
 
 ### Other Tokens
 
@@ -128,18 +128,17 @@ Common additions (not included by default to keep the template lean):
 
 ## Vite+
 
-The template uses standard Vite, but can be migrated to Vite+ (`vp`) for a unified toolchain that replaces Vite, Vitest, ESLint, and Prettier:
+This template ships with Vite+ (`vp`) — a unified toolchain that replaces Vite, Vitest, ESLint, and Prettier in one CLI:
 
 ```bash
-vp migrate              # migrate this project
-vp install              # install dependencies
 vp dev                  # dev server
 vp check                # format + lint + type-check in one pass
+vp check --fix          # auto-fix formatting and lint issues
 vp test                 # run tests
 vp build                # production build
 ```
 
-After migration, everything lives in `vite.config.ts`. Import from `'vite-plus'` and `'vite-plus/test'` instead of `'vite'`/`'vitest'`.
+Everything lives in `vite.config.ts` — no separate vitest/eslint/prettier configs. Import from `'vite-plus'` and `'vite-plus/test'` instead of `'vite'`/`'vitest'`.
 
 ## Dark Mode
 
@@ -158,8 +157,8 @@ The `.dark` selector in `index.css` overrides all semantic tokens. Components us
 
 ## Routes
 
-| Path | Component | Purpose |
-|---|---|---|
-| `/` | `HomePage` | Index with links to design pages |
-| `/design` | `DesignSampler` | Typography, colors, buttons, cards, inputs, lists, blog post |
-| `/design/dashboard` | `Dashboard` | Stat cards with trends, chart placeholder, activity list |
+| Path                | Component       | Purpose                                                      |
+| ------------------- | --------------- | ------------------------------------------------------------ |
+| `/`                 | `HomePage`      | Index with links to design pages                             |
+| `/design`           | `DesignSampler` | Typography, colors, buttons, cards, inputs, lists, blog post |
+| `/design/dashboard` | `Dashboard`     | Stat cards with trends, chart placeholder, activity list     |

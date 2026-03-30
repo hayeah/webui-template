@@ -1,7 +1,7 @@
-import { Route, Switch } from 'wouter'
-import { HomePage } from './pages/HomePage'
-import { DesignSampler } from './pages/design/DesignSampler'
-import { Dashboard } from './pages/design/Dashboard'
+import { Route, Switch } from "wouter";
+import { HomePage } from "./pages/HomePage";
+import { DesignSampler } from "./pages/design/DesignSampler";
+import { Dashboard } from "./pages/design/Dashboard";
 
 export function App() {
   return (
@@ -15,5 +15,5 @@ export function App() {
         </div>
       </Route>
     </Switch>
-  )
+  );
 }

@@ -1,3 +1,3 @@
 declare interface Window {
-  __tap__: any
+  __tap__: any;
 }

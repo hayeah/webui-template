@@ -1,5 +1,5 @@
-import { Link } from 'wouter'
-import { ArrowLeft, Sun, Moon, Bell, Search, ChevronRight } from 'lucide-react'
+import { Link } from "wouter";
+import { ArrowLeft, Sun, Moon, Bell, Search, ChevronRight } from "lucide-react";
 
 export function DesignSampler() {
   return (
@@ -15,7 +15,10 @@ export function DesignSampler() {
       {/* Page Links */}
       <div className="max-w-3xl mx-auto px-6 pt-6">
         <div className="flex gap-3">
-          <Link href="/design/dashboard" className="text-sm text-primary underline hover:opacity-70">
+          <Link
+            href="/design/dashboard"
+            className="text-sm text-primary underline hover:opacity-70"
+          >
             Dashboard
           </Link>
         </div>
@@ -28,16 +31,21 @@ export function DesignSampler() {
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tight">Heading One — The quick brown fox</h1>
             <h2 className="text-3xl font-semibold">Heading Two — Jumps over the lazy dog</h2>
-            <h3 className="text-2xl font-medium">Heading Three — Pack my box with five dozen liquor jugs</h3>
-            <h4 className="text-xl font-medium">Heading Four — How vexingly quick daft zebras jump</h4>
+            <h3 className="text-2xl font-medium">
+              Heading Three — Pack my box with five dozen liquor jugs
+            </h3>
+            <h4 className="text-xl font-medium">
+              Heading Four — How vexingly quick daft zebras jump
+            </h4>
             <p className="text-base leading-relaxed">
-              Body text at base size. Good typography is invisible — it serves the content without calling
-              attention to itself. The spacing between lines (leading), the measure (line length), and the
-              contrast between heading and body weights all contribute to readability.
+              Body text at base size. Good typography is invisible — it serves the content without
+              calling attention to itself. The spacing between lines (leading), the measure (line
+              length), and the contrast between heading and body weights all contribute to
+              readability.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Secondary text in muted foreground. Used for captions, timestamps, metadata, and supporting
-              information that shouldn't compete with primary content.
+              Secondary text in muted foreground. Used for captions, timestamps, metadata, and
+              supporting information that shouldn't compete with primary content.
             </p>
             <code className="block text-sm font-mono bg-muted px-3 py-2 rounded-md">
               const template = "monospace for code, configs, and terminal output";
@@ -138,7 +146,7 @@ export function DesignSampler() {
         <section>
           <SectionTitle>List Items</SectionTitle>
           <div className="rounded-xl border border-border divide-y divide-border overflow-hidden">
-            {['Settings', 'Profile', 'Notifications', 'Billing'].map((item) => (
+            {["Settings", "Profile", "Notifications", "Billing"].map((item) => (
               <div
                 key={item}
                 className="flex items-center justify-between px-4 py-3 bg-card hover:bg-accent transition-colors cursor-pointer"
@@ -154,7 +162,9 @@ export function DesignSampler() {
         <section>
           <SectionTitle>Blog Post (Typography Test)</SectionTitle>
           <article className="prose-like space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">On the Craft of Building Interfaces</h2>
+            <h2 className="text-2xl font-bold tracking-tight">
+              On the Craft of Building Interfaces
+            </h2>
             <p className="text-sm text-muted-foreground">March 30, 2026 · 4 min read</p>
             <p className="leading-relaxed">
               The best interfaces disappear. They become so natural, so aligned with the user's
@@ -164,8 +174,8 @@ export function DesignSampler() {
             </p>
             <p className="leading-relaxed">
               Every pixel carries weight. A heading that's too bold overwhelms; too light and it
-              fails to anchor the section. Body text needs room to breathe — generous leading,
-              a comfortable measure, and enough contrast against the background to be read without
+              fails to anchor the section. Body text needs room to breathe — generous leading, a
+              comfortable measure, and enough contrast against the background to be read without
               strain but not so much that it <strong>shouts</strong>.
             </p>
             <blockquote className="border-l-4 border-border pl-4 italic text-muted-foreground">
@@ -186,13 +196,16 @@ export function DesignSampler() {
           <SectionTitle>Theme Info</SectionTitle>
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <Sun className="w-4 h-4" />
-            <span>Light mode active (add <code className="font-mono bg-muted px-1 rounded">.dark</code> class to root for dark mode)</span>
+            <span>
+              Light mode active (add <code className="font-mono bg-muted px-1 rounded">.dark</code>{" "}
+              class to root for dark mode)
+            </span>
             <Moon className="w-4 h-4 ml-2 opacity-40" />
           </div>
         </section>
       </div>
     </div>
-  )
+  );
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
@@ -200,7 +213,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
     <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
       {children}
     </h2>
-  )
+  );
 }
 
 function ColorSwatch({
@@ -209,16 +222,14 @@ function ColorSwatch({
   fg,
   border,
 }: {
-  name: string
-  bg: string
-  fg: string
-  border?: boolean
+  name: string;
+  bg: string;
+  fg: string;
+  border?: boolean;
 }) {
   return (
-    <div
-      className={`rounded-lg px-4 py-3 ${bg} ${fg} ${border ? 'border border-border' : ''}`}
-    >
+    <div className={`rounded-lg px-4 py-3 ${bg} ${fg} ${border ? "border border-border" : ""}`}>
       <span className="text-sm font-medium">{name}</span>
     </div>
-  )
+  );
 }

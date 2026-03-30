@@ -1,52 +1,60 @@
-import { Link } from 'wouter'
-import { ArrowLeft, TrendingUp, TrendingDown, Users, DollarSign, Activity, BarChart3 } from 'lucide-react'
+import { Link } from "wouter";
+import {
+  ArrowLeft,
+  TrendingUp,
+  TrendingDown,
+  Users,
+  DollarSign,
+  Activity,
+  BarChart3,
+} from "lucide-react";
 
 const STATS = [
   {
-    label: 'Total Revenue',
-    value: '$1,250.00',
-    trend: '+12.5%',
+    label: "Total Revenue",
+    value: "$1,250.00",
+    trend: "+12.5%",
     up: true,
-    note: 'Trending up this month',
-    detail: 'Visitors for the last 6 months',
+    note: "Trending up this month",
+    detail: "Visitors for the last 6 months",
     icon: DollarSign,
   },
   {
-    label: 'New Customers',
-    value: '1,234',
-    trend: '-20%',
+    label: "New Customers",
+    value: "1,234",
+    trend: "-20%",
     up: false,
-    note: 'Down 20% this period',
-    detail: 'Acquisition needs attention',
+    note: "Down 20% this period",
+    detail: "Acquisition needs attention",
     icon: Users,
   },
   {
-    label: 'Active Accounts',
-    value: '45,678',
-    trend: '+12.5%',
+    label: "Active Accounts",
+    value: "45,678",
+    trend: "+12.5%",
     up: true,
-    note: 'Strong user retention',
-    detail: 'Engagement exceeds targets',
+    note: "Strong user retention",
+    detail: "Engagement exceeds targets",
     icon: Activity,
   },
   {
-    label: 'Growth Rate',
-    value: '4.5%',
-    trend: '+4.5%',
+    label: "Growth Rate",
+    value: "4.5%",
+    trend: "+4.5%",
     up: true,
-    note: 'Steady performance increase',
-    detail: 'Meets growth projections',
+    note: "Steady performance increase",
+    detail: "Meets growth projections",
     icon: BarChart3,
   },
-]
+];
 
 const RECENT_ACTIVITY = [
-  { action: 'New signup', user: 'alice@example.com', time: '2 min ago' },
-  { action: 'Purchase completed', user: 'bob@example.com', time: '15 min ago' },
-  { action: 'Report exported', user: 'carol@example.com', time: '1 hr ago' },
-  { action: 'Settings updated', user: 'dave@example.com', time: '3 hr ago' },
-  { action: 'New signup', user: 'eve@example.com', time: '5 hr ago' },
-]
+  { action: "New signup", user: "alice@example.com", time: "2 min ago" },
+  { action: "Purchase completed", user: "bob@example.com", time: "15 min ago" },
+  { action: "Report exported", user: "carol@example.com", time: "1 hr ago" },
+  { action: "Settings updated", user: "dave@example.com", time: "3 hr ago" },
+  { action: "New signup", user: "eve@example.com", time: "5 hr ago" },
+];
 
 export function Dashboard() {
   return (
@@ -63,17 +71,12 @@ export function Dashboard() {
         {/* Stat Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border bg-card p-5 space-y-3"
-            >
+            <div key={stat.label} className="rounded-xl border border-border bg-card p-5 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">{stat.label}</span>
                 <span
                   className={`flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full ${
-                    stat.up
-                      ? 'text-success bg-success/10'
-                      : 'text-destructive bg-destructive/10'
+                    stat.up ? "text-success bg-success/10" : "text-destructive bg-destructive/10"
                   }`}
                 >
                   {stat.up ? (
@@ -114,11 +117,7 @@ export function Dashboard() {
           {/* Chart area — placeholder bars */}
           <div className="flex items-end gap-2 h-40">
             {[40, 65, 45, 80, 55, 70, 90, 60, 75, 85, 50, 95].map((h, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-t bg-primary/15"
-                style={{ height: `${h}%` }}
-              />
+              <div key={i} className="flex-1 rounded-t bg-primary/15" style={{ height: `${h}%` }} />
             ))}
           </div>
           <div className="flex justify-between text-xs text-muted-foreground px-1">
@@ -147,5 +146,5 @@ export function Dashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
