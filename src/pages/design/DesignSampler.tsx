@@ -55,7 +55,9 @@ export function DesignSampler() {
             <ColorSwatch name="secondary" bg="bg-secondary" fg="text-secondary-foreground" />
             <ColorSwatch name="muted" bg="bg-muted" fg="text-muted-foreground" />
             <ColorSwatch name="accent" bg="bg-accent" fg="text-accent-foreground" />
-            <ColorSwatch name="destructive" bg="bg-destructive" fg="text-white" />
+            <ColorSwatch name="destructive" bg="bg-destructive" fg="text-destructive-foreground" />
+            <ColorSwatch name="success" bg="bg-success" fg="text-success-foreground" />
+            <ColorSwatch name="warning" bg="bg-warning" fg="text-warning-foreground" />
             <ColorSwatch name="card" bg="bg-card" fg="text-card-foreground" border />
             <ColorSwatch name="popover" bg="bg-popover" fg="text-popover-foreground" border />
           </div>
@@ -71,7 +73,7 @@ export function DesignSampler() {
             <button className="px-4 py-2 rounded-lg bg-secondary text-secondary-foreground font-medium hover:opacity-80 transition-opacity">
               Secondary
             </button>
-            <button className="px-4 py-2 rounded-lg bg-destructive text-white font-medium hover:opacity-90 transition-opacity">
+            <button className="px-4 py-2 rounded-lg bg-destructive text-destructive-foreground font-medium hover:opacity-90 transition-opacity">
               Destructive
             </button>
             <button className="px-4 py-2 rounded-lg border border-border text-foreground font-medium hover:bg-accent transition-colors">
