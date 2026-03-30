@@ -10,12 +10,15 @@ Starter template for React web UIs. Pre-configured with design tokens, routing, 
 ## Quick Start
 
 ```bash
-# Clone
+# Option A: clone directly
 git-quick-clone github.com/hayeah/webui-template
 cd ~/github.com/hayeah/webui-template
-
-# Install and run
 pnpm install
+vp dev --port 5173
+
+# Option B: scaffold via Vite+ (degits the repo, installs deps automatically)
+vp create github:hayeah/webui-template
+cd webui-template
 vp dev --port 5173
 ```
 
