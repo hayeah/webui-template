@@ -72,8 +72,8 @@ export function Dashboard() {
                 <span
                   className={`flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full ${
                     stat.up
-                      ? 'text-emerald-700 bg-emerald-50'
-                      : 'text-red-700 bg-red-50'
+                      ? 'text-emerald-700 bg-emerald-50 dark:text-emerald-400 dark:bg-emerald-950'
+                      : 'text-red-700 bg-red-50 dark:text-red-400 dark:bg-red-950'
                   }`}
                 >
                   {stat.up ? (
